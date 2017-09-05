@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/WebsocketTest.unity
+  isLoaded: 1
+  isActive: 1
