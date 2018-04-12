@@ -1,0 +1,30 @@
+
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
+*.obj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.dll
+*.lib
+*.sbr
+*.json
+*.backup
+*.meta
+/Unity2DActionExample/Library/CurrentLayout.dwlt
+/Unity2DActionExample/.vs
+/Unity2DActionExample/Temp
