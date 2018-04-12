@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
         // Rigidbody2Dをキャッシュする
         rb2d = GetComponent<Rigidbody2D>();
 
-        speed = 3.0f;
+        speed = 100.0f;
     }
 
     // シーン中にフレーム毎に呼ばれるメソッド
