@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour
     private int tempA;
     private int a;
     private float speed;
+    PlayerMovingDirectionGetter playerMoveingDirectionGetter;
 
     // Updateの前に1回だけ呼ばれるメソッド
     void Start()
@@ -22,7 +24,8 @@ public class Player : MonoBehaviour
         // Rigidbody2Dをキャッシュする
         rb2d = GetComponent<Rigidbody2D>();
 
-        speed = 100.0f;
+        speed = 1.25f;
+        playerMoveingDirectionGetter = new PlayerMovingDirectionGetter();
     }
 
     // シーン中にフレーム毎に呼ばれるメソッド
@@ -30,25 +33,25 @@ public class Player : MonoBehaviour
     {
 
         // xの正方向にscrollスピードで移動
-       
+        EnumMoveDirection ENUM_DIRECTION = playerMoveingDirectionGetter.Get();
         rb2d.velocity = new Vector2(0, 0);
         // スペースキーが押されたら
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (ENUM_DIRECTION.Equals(EnumMoveDirection.LEFT))
         {
             rb2d.velocity = new Vector2(-speed, 0);
             tempA = 3;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (ENUM_DIRECTION.Equals(EnumMoveDirection.RIGHT))
         {
             rb2d.velocity = new Vector2(speed, 0);
             tempA = 4;
         }
-        else if (Input.GetKey(KeyCode.UpArrow))
+        else if (ENUM_DIRECTION.Equals(EnumMoveDirection.UP))
         {
             rb2d.velocity = new Vector2(0, speed);
             tempA = 1;
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (ENUM_DIRECTION.Equals(EnumMoveDirection.DOWN))
         {
             rb2d.velocity = new Vector2(0, -speed);
             tempA = 2;

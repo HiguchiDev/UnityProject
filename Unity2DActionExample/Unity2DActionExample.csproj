@@ -13,12 +13,14 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectGenerator>VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.4.0f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -244,13 +246,17 @@
     <Compile Include="Assets\BottomPoint.cs" />
     <Compile Include="Assets\Camera.cs" />
     <Compile Include="Assets\CameraWork.cs" />
+    <Compile Include="Assets\EnemyMovingDirectionGetter.cs" />
+    <Compile Include="Assets\EnumMoveDirection.cs" />
     <Compile Include="Assets\GroundCreator.cs" />
     <Compile Include="Assets\GroundScript.cs" />
     <Compile Include="Assets\HeightPoint.cs" />
     <Compile Include="Assets\HiyokoAutoMover.cs" />
     <Compile Include="Assets\HiyokoCreator.cs" />
     <Compile Include="Assets\LinePoint.cs" />
+    <Compile Include="Assets\MoveingDirectionGetter.cs" />
     <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\PlayerMoveingDirectionGetter.cs" />
     <Compile Include="Assets\Score.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

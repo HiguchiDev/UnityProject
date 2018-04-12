@@ -88,7 +88,7 @@ Animator:
   m_GameObject: {fileID: 1052579100939898}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 86a193de6df6adb4aa7f4b54dfcad862, type: 2}
+  m_Controller: {fileID: 9100000, guid: 101c0851a9ffed141a161da97dda9c0e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -107,6 +107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20f615038213d34492795c6bc8b6d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flap: 550
+  scroll: 0.01
 --- !u!212 &212604010979339344
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -116,6 +118,7 @@ SpriteRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -131,6 +134,7 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
