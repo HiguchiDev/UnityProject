@@ -6,7 +6,7 @@ namespace Assets
     {
         public override EnumMoveDirection Get()
         {
-            int moveDirectionNum =  UnityEngine.Random.Range(1, (int)EnumMoveDirection.MAX);
+            int moveDirectionNum =  UnityEngine.Random.Range(0, (int)EnumMoveDirection.MAX);
 
             switch (moveDirectionNum)
             {

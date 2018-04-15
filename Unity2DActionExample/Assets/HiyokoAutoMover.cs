@@ -14,26 +14,42 @@ public class HiyokoAutoMover : MonoBehaviour {
     private int a;
     private float speed;
     MovingDirectionGetter enemyMoveingDirectionGetter;
+    public float timeOut;
+    private float timeElapsed;
+    EnumMoveDirection ENUM_DIRECTION;
 
     // Updateの前に1回だけ呼ばれるメソッド
     void Start()
     {
+        timeOut = 1.5f;
+        timeElapsed = 0.0f;
         tempA = 0;
         a = 0;
         Anim = GetComponent<Animator>();
         // Rigidbody2Dをキャッシュする
         rb2d = GetComponent<Rigidbody2D>();
 
-        speed = 1.25f;
+        speed = 0.5f;
         enemyMoveingDirectionGetter = new EnemyMovingDirectionGetter();
+        ENUM_DIRECTION = EnumMoveDirection.NEUTRAL;
     }
 
         // シーン中にフレーム毎に呼ばれるメソッド
         void Update()
     {
 
-        // xの正方向にscrollスピードで移動
-        EnumMoveDirection ENUM_DIRECTION = enemyMoveingDirectionGetter.Get();
+        timeElapsed += Time.deltaTime;
+
+        if (timeElapsed >= timeOut)
+        {
+            // Do anything
+
+            timeElapsed = 0.0f;
+            // xの正方向にscrollスピードで移動
+            ENUM_DIRECTION = enemyMoveingDirectionGetter.Get();
+        }
+
+
         rb2d.velocity = new Vector2(0, 0);
         // スペースキーが押されたら
         if (ENUM_DIRECTION.Equals(EnumMoveDirection.LEFT))
