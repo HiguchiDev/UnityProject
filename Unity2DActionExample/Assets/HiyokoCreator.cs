@@ -12,8 +12,8 @@ public class HiyokoCreator : MonoBehaviour {
         for (int i = 0; i < 30; i++) {
             for (int j = 0; j < 30; j++) {
                 prefab = (GameObject)Resources.Load("HiyokoPrefab");
-                float posX = (i * 0.2f);
-                float posY = (j * 0.2f);
+                float posX = (i * 0.3f);
+                float posY = (j * 0.3f);
                 float posZ = -0.1f;
 
                 Vector3 pos = new Vector3(posX, posY, posZ);

@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         // Rigidbody2Dをキャッシュする
         rb2d = GetComponent<Rigidbody2D>();
 
-        speed = 1.25f;
+        speed = 0.75f;
         playerMoveingDirectionGetter = new PlayerMovingDirectionGetter();
     }
 
