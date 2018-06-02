@@ -9,6 +9,7 @@ TagManager:
   - CountZone
   - HeightLine
   - BottomLine
+  - Fire
   layers:
   - Default
   - TransparentFX

@@ -16,11 +16,13 @@ public class HiyokoAutoMover : MonoBehaviour {
     MovingDirectionGetter enemyMoveingDirectionGetter;
     public float timeOut;
     private float timeElapsed;
+    private bool yakitoriFlag;
     EnumMoveDirection ENUM_DIRECTION;
 
     // Updateの前に1回だけ呼ばれるメソッド
     void Start()
     {
+        yakitoriFlag = false;
         timeOut = 1.5f;
         timeElapsed = 0.0f;
         tempA = 0;
@@ -51,8 +53,11 @@ public class HiyokoAutoMover : MonoBehaviour {
 
 
         rb2d.velocity = new Vector2(0, 0);
+        if (yakitoriFlag) {
+            tempA = 99;
+        }
         // スペースキーが押されたら
-        if (ENUM_DIRECTION.Equals(EnumMoveDirection.LEFT))
+        else if (ENUM_DIRECTION.Equals(EnumMoveDirection.LEFT))
         {
             rb2d.velocity = new Vector2(-speed, 0);
             tempA = 3;
@@ -84,5 +89,17 @@ public class HiyokoAutoMover : MonoBehaviour {
 
         }
 
+
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Fire")
+        {
+            yakitoriFlag = true;
+            //Destroy(this.gameObject);
+        }
+
+        //Destroy(other.gameObject);
     }
 }
