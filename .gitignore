@@ -26,6 +26,6 @@ Thumbs.db
 *.backup
 *.meta
 *.csproj
-/Unity2DActionExample/Library/CurrentLayout.dwlt
+/Unity2DActionExample/Library/
 /Unity2DActionExample/.vs
 /Unity2DActionExample/Temp
