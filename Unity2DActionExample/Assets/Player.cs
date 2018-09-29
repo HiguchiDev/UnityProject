@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         // Rigidbody2Dをキャッシュする
         rb2d = GetComponent<Rigidbody2D>();
 
-        speed = 0.75f;
+        speed = 1.5f;
         playerMoveingDirectionGetter = new PlayerMovingDirectionGetter();
     }
 
@@ -46,19 +46,10 @@ public class Player : MonoBehaviour
             rb2d.velocity = new Vector2(speed, 0);
             tempA = 4;
         }
-        else if (ENUM_DIRECTION.Equals(EnumMoveDirection.UP))
-        {
-            rb2d.velocity = new Vector2(0, speed);
-            tempA = 1;
-        }
-        else if (ENUM_DIRECTION.Equals(EnumMoveDirection.DOWN))
-        {
-            rb2d.velocity = new Vector2(0, -speed);
-            tempA = 2;
-        }
         else
         {
-            tempA = 0;
+         //   rb2d.velocity = new Vector2(0, speed);
+            tempA = 1;
         }
 
         if(a != tempA)

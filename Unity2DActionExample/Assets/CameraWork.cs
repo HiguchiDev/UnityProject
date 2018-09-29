@@ -3,26 +3,57 @@ using System.Collections;
 
 public class CameraWork : MonoBehaviour
 {
+    private Camera cam;
+    // 画像のサイズ
+    private float width = 320;
+    private float height = 480f;
+    // 画像のPixel Per Unit
+    private float pixelPerUnit = 100f;
 
-    // 変数の定義
-    private Transform target;
+    void Awake()
+    {
+        float aspect = (float)Screen.height / (float)Screen.width;
+        float bgAcpect = height / width;
 
-    private int screenHeight;
+        // カメラコンポーネントを取得します
+        cam = Camera.main;
+
+        // カメラのorthographicSizeを設定
+        cam.orthographicSize = (height / 2f / pixelPerUnit);
+
+
+        if (bgAcpect > aspect)
+        {
+            // 倍率
+            float bgScale = height / Screen.height;
+            // viewport rectの幅
+            float camWidth = width / (Screen.width * bgScale);
+            // viewportRectを設定
+            cam.rect = new Rect((1f - camWidth) / 2f, 0f, camWidth, 1f);
+        }
+        else
+        {
+            // 倍率
+            float bgScale = width / Screen.width;
+            // viewport rectの幅
+            float camHeight = height / (Screen.height * bgScale);
+            // viewportRectを設定
+            cam.rect = new Rect(0f, (1f - camHeight) / 2f, 1f, camHeight);
+        }
+
+        print(Screen.height);
+    }
+    
 
     // シーン開始時に一度だけ呼ばれる関数
     void Start()
     {
-        screenHeight = Screen.height;
-
-        // 変数にPlayerオブジェクトのtransformコンポーネントを代入
-        target = GameObject.Find("Fire2 (1)").transform;
 
     }
 
     // シーン中にフレーム毎に呼ばれる関数
     void Update()
     {
-        // カメラのx座標をPlayerオブジェクトのx座標から取得y座標とz座標は現在の状態を維持
-        transform.position = new Vector3(transform.position.x, target.position.y + 1.55f, transform.position.z);
+
     }
 }
