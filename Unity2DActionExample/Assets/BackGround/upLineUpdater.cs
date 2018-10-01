@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class upLineUpdater : MonoBehaviour {
+public class UpLineUpdater : MonoBehaviour {
 
-    private GameObject gameObject;
+    private GameObject backGroundObject;
     private bool visible;
     private SpriteRenderer sr;
 
     // Use this for initialization
     void Start () {
 
-        gameObject = GameObject.Find("backGround");
+        backGroundObject = GameObject.Find("BackGroundPrefab");
 
-        sr = gameObject.GetComponent<SpriteRenderer>();
+        sr = backGroundObject.GetComponent<SpriteRenderer>();
 
         float y = sr.bounds.size.y;
 
         Vector2 thisPos = transform.position;
-        Vector2 targetPos = gameObject.transform.position;
+        Vector2 targetPos = backGroundObject.transform.position;
 
         thisPos.y = (targetPos.y + y / 2);
 
@@ -28,13 +28,28 @@ public class upLineUpdater : MonoBehaviour {
 
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    public void setBackGroundObject(GameObject gameObject)
+    {
+        this.backGroundObject = gameObject;
+        this.visible = true;
+        this.Update();
+        sr = backGroundObject.GetComponent<SpriteRenderer>();
+    }
+
+    public GameObject getBackGroundObject()
+    {
+        return this.backGroundObject;
+
+
+    }
+
+    // Update is called once per frame
+    void Update () {
         float y = sr.bounds.size.y;
 
         Vector2 thisPos = transform.position;
-        Vector2 targetPos = gameObject.transform.position;
+        Vector2 targetPos = backGroundObject.transform.position;
 
         thisPos.y = (targetPos.y + y / 2);
 
@@ -46,9 +61,20 @@ public class upLineUpdater : MonoBehaviour {
     {
         Vector2 pos = transform.position;
 
-        print("座標" + pos.x + ":" + pos.y);
+        print("Upper座標" + pos.x + ":" + pos.y);
 
         this.visible = false;
         print(this.visible);
     }
+
+    void OnBecameVisible()
+    {
+        Vector2 pos = transform.position;
+
+        print("Upper座標" + pos.x + ":" + pos.y);
+
+        this.visible = true;
+        print(this.visible);
+    }
+
 }

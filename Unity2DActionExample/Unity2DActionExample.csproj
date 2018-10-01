@@ -241,9 +241,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BackGround\GroundAutoUpdater.cs" />
-    <Compile Include="Assets\BackGround\lowLineUpdater.cs" />
-    <Compile Include="Assets\BackGround\upLineUpdater.cs" />
+    <Compile Include="Assets\BackGround\BackGroundAutoUpdater.cs" />
+    <Compile Include="Assets\BackGround\BackGroundCreator.cs" />
+    <Compile Include="Assets\BackGround\BottomLineUpdater.cs" />
+    <Compile Include="Assets\BackGround\UpLineUpdater.cs" />
     <Compile Include="Assets\BottomPoint.cs" />
     <Compile Include="Assets\CameraWork.cs" />
     <Compile Include="Assets\EnemyMovingDirectionGetter.cs" />
