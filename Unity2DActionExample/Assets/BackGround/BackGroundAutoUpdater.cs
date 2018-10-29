@@ -7,11 +7,11 @@ public class BackGroundAutoUpdater : MonoBehaviour {
 
     void Update()
     {
-
+        print("BackGroundAutoUpdater call Update");
 
         Vector3 pos = transform.position;
 
-        pos.y += -0.01f;
+        pos.y += -0.1f;
 
 
 
