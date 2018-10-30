@@ -7,11 +7,11 @@ public class BackGroundAutoUpdater : MonoBehaviour {
 
     void Update()
     {
-        print("BackGroundAutoUpdater call Update");
+        //print("BackGroundAutoUpdater call Update");
 
         Vector3 pos = transform.position;
 
-        pos.y += -0.1f;
+        pos.y += -0.025f;
 
 
 
@@ -21,5 +21,10 @@ public class BackGroundAutoUpdater : MonoBehaviour {
 
     }
 
-
+    void OnBecameInVisible()
+    {
+        //オブジェクト削除する。
+        Destroy(gameObject);
+        print("削除！！！");
+    }
 }

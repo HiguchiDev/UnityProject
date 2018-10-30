@@ -19,7 +19,7 @@ public class BackGroundCreator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        print("BackGroundCreator call Update");
+        //print("BackGroundCreator call Update");
         if (this.upLineUpdater.getVisivle())
         {
 
@@ -29,8 +29,8 @@ public class BackGroundCreator : MonoBehaviour {
                                                                    this.upLineObject.transform.position.y + (prefabs.GetComponent<SpriteRenderer>().bounds.size.y / 2)
                , 1), Quaternion.identity);
 
-            print("upLineObj:y:" + this.upLineObject.transform.position.y);
-            print("prefabs:y:" + prefabs.GetComponent<SpriteRenderer>().bounds.size.y / 2);
+            //print("upLineObj:y:" + this.upLineObject.transform.position.y);
+            //print("prefabs:y:" + prefabs.GetComponent<SpriteRenderer>().bounds.size.y / 2);
 
             this.upLineUpdater.setBackGroundObject(shell);
 

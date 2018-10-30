@@ -52,7 +52,7 @@ public class UpLineUpdater : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        print("UpLineUpdater call Update");
+        //print("UpLineUpdater call Update");
         float y = sr.bounds.size.y;
 
         Vector2 thisPos = transform.position;
