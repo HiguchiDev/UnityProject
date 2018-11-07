@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     private int a;
     private const float MOVE_SPEED = 1.5f;
     PlayerMovingDirectionGetter playerMoveingDirectionGetter;
+    private GameObject screenLeftPoint;
+    private GameObject screenRightPoint;
 
     // Updateの前に1回だけ呼ばれるメソッド
     void Start()
@@ -25,6 +27,9 @@ public class Player : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
 
         playerMoveingDirectionGetter = new PlayerMovingDirectionGetter();
+
+        screenLeftPoint = GameObject.Find("ScreeanLeftPoint");
+        screenRightPoint = GameObject.Find("ScreeanRightPoint");
     }
 
     // シーン中にフレーム毎に呼ばれるメソッド
@@ -56,14 +61,8 @@ public class Player : MonoBehaviour
             tempA = 1;
         }
 
-        GameObject backGroundObject = GameObject.Find("BackGroundPrefab");
-        SpriteRenderer sr = backGroundObject.GetComponent<SpriteRenderer>();
 
-        float x = sr.bounds.size.x;
-
-        Vector2 targetPos = backGroundObject.transform.position;
-
-        rb2d.velocity = new Vector2(Mathf.Clamp(moveValue, targetPos.x - x / 2, targetPos.x + x / 2), 0);
+        rb2d.velocity = new Vector2(Mathf.Clamp(moveValue, screenLeftPoint.transform.position.x, screenRightPoint.transform.position.x), 0);
 
         if (a != tempA)
         {

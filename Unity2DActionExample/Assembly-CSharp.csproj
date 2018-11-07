@@ -79,6 +79,8 @@
     <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\PlayerMoveingDirectionGetter.cs" />
     <Compile Include="Assets\Score.cs" />
+    <Compile Include="Assets\Screen\ScreenLeftPoint.cs" />
+    <Compile Include="Assets\Screen\ScreenRightPoint.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/higuchidev/UnityProject/Unity2DActionExample/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

@@ -3,8 +3,6 @@ using System.Collections;
 
 public class BackGroundAutoUpdater : MonoBehaviour {
 
-    public bool visible = true;
-
     void Update()
     {
         //print("BackGroundAutoUpdater call Update");
@@ -17,14 +15,11 @@ public class BackGroundAutoUpdater : MonoBehaviour {
 
         transform.position = pos;
 
-        
+
 
     }
-
-    void OnBecameInVisible()
+    void OnBecameInvisible()
     {
-        //オブジェクト削除する。
-        Destroy(gameObject);
-        print("削除！！！");
+        Destroy(this.gameObject);
     }
 }
