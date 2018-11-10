@@ -39,14 +39,14 @@ public class Player : MonoBehaviour
         // xの正方向にscrollスピードで移動
         EnumMoveDirection ENUM_DIRECTION = playerMoveingDirectionGetter.Get();
 
-        rb2d.velocity = new Vector2(0, 0);
+        Vector2 velocity = new Vector2(0, 0);
 
         float moveValue = 0;
 
         // スペースキーが押されたら
         if (ENUM_DIRECTION.Equals(EnumMoveDirection.LEFT))
         {
-             
+
             moveValue = -MOVE_SPEED;
             tempA = 3;
         }
@@ -57,12 +57,28 @@ public class Player : MonoBehaviour
         }
         else
         {
-         //   rb2d.velocity = new Vector2(0, speed);
+            //   rb2d.velocity = new Vector2(0, speed);
             tempA = 1;
         }
 
+                                        //-1.6
+        if(transform.position.x > screenLeftPoint.transform.position.x &&
+           moveValue < 0){
+            velocity.x = moveValue;
+        }
+                                        //1.6
+        else if(transform.position.x < screenRightPoint.transform.position.x &&
+           moveValue > 0){
+            velocity.x = moveValue;
+        }
 
-        rb2d.velocity = new Vector2(Mathf.Clamp(moveValue, screenLeftPoint.transform.position.x, screenRightPoint.transform.position.x), 0);
+        rb2d.velocity = velocity;
+        /*rb2d.velocity = new Vector2(//x
+                                    Mathf.Clamp(moveValue,
+                                                screenLeftPoint.transform.position.x, 
+                                                screenRightPoint.transform.position.x),
+                                    //y
+                                    0);*/
 
         if (a != tempA)
         {
