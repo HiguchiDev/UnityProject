@@ -66,6 +66,7 @@
     <Compile Include="Assets\BackGround\UpLineUpdater.cs" />
     <Compile Include="Assets\BottomPoint.cs" />
     <Compile Include="Assets\CameraWork.cs" />
+    <Compile Include="Assets\Enemy.cs" />
     <Compile Include="Assets\EnemyMovingDirectionGetter.cs" />
     <Compile Include="Assets\EnumMoveDirection.cs" />
     <Compile Include="Assets\FireController.cs" />
