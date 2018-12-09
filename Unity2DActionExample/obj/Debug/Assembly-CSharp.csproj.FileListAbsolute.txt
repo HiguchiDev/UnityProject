@@ -246,3 +246,6 @@
 /Users/higuchidev/UnityProject/Unity2DActionExample/obj/Debug/Assembly-CSharp.csproj.CopyComplete
 /Users/higuchidev/UnityProject/Unity2DActionExample/obj/Debug/Assembly-CSharp.dll
 /Users/higuchidev/UnityProject/Unity2DActionExample/obj/Debug/Assembly-CSharp.pdb
+/Users/higuchidev/UnityProject/Unity2DActionExample/Temp/bin/Debug/UnityEngine.SpatialTrackingModule.dll
+/Users/higuchidev/UnityProject/Unity2DActionExample/Temp/bin/Debug/UnityEngine.SpatialTrackingModule.dll.mdb
+/Users/higuchidev/UnityProject/Unity2DActionExample/Temp/bin/Debug/UnityEngine.SpatialTrackingModule.xml

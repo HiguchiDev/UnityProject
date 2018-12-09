@@ -126,7 +126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4969078943917830, guid: 1974e47ba225d3947b5a03fc60014618, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4969078943917830, guid: 1974e47ba225d3947b5a03fc60014618, type: 2}
       propertyPath: m_LocalPosition.z
@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4969078943917830, guid: 1974e47ba225d3947b5a03fc60014618, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1052579100939898, guid: 1974e47ba225d3947b5a03fc60014618, type: 2}
       propertyPath: m_Name
@@ -231,6 +231,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62fd03cfb357ed543b0c3ed87938229c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &353011154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 353011156}
+  - component: {fileID: 353011155}
+  m_Layer: 0
+  m_Name: WindMover
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &353011155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353011154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f47420449fb4a6fbbfac8bc588e609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &353011156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353011154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.19482577, y: 2.03387, z: 0.17295448}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &365355730 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1052579100939898, guid: 1974e47ba225d3947b5a03fc60014618,
@@ -410,8 +450,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18637c71315f549d0ba4a03423419b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flap: 550
-  scroll: 0.01
 --- !u!1 &828999621
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,3 +1017,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8, y: 0.2}
   m_EdgeRadius: 0
+--- !u!1 &1438422964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1438422965}
+  m_Layer: 0
+  m_Name: EnemyMoveStopPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1438422965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1438422964}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
