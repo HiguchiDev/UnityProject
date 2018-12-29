@@ -4,7 +4,8 @@ using Assets;
 
 public class Player : MonoBehaviour
 {
-
+    private int attackInterval;
+    private int attackIntervalCount;
     // 変数の定義と初期化
     public float flap = 550f;
     public float scroll = 0.01f;
@@ -20,6 +21,8 @@ public class Player : MonoBehaviour
     // Updateの前に1回だけ呼ばれるメソッド
     void Start()
     {
+        attackIntervalCount = 0;
+        attackInterval = 15;
         tempA = 0;
         a = 0;
         Anim = GetComponent<Animator>();
@@ -85,6 +88,23 @@ public class Player : MonoBehaviour
             a = tempA;
             Anim.SetInteger("a", a);
 
+        }
+
+        if (attackIntervalCount < attackInterval) {
+            attackIntervalCount++;
+        }
+
+        // スペースキーが押されたら
+        if (attackIntervalCount == attackInterval && Input.GetKey(KeyCode.Space))
+        {
+            print("shoot");
+            attackIntervalCount = 0;
+            GameObject prefabs;
+            prefabs = (GameObject)Resources.Load("BulletPrefab");
+            GameObject shell = (GameObject)Instantiate(prefabs,
+                                                       new Vector3(this.transform.position.x,
+                                                                   this.transform.position.y,
+                                                                   1), Quaternion.identity);
         }
 
     }

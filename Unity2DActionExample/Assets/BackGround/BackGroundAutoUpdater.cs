@@ -9,7 +9,7 @@ public class BackGroundAutoUpdater : MonoBehaviour {
 
         Vector3 pos = transform.position;
 
-        pos.y += -0.025f;
+        pos.y += -0.02f;
 
 
 

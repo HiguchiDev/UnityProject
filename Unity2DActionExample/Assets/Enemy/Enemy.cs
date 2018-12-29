@@ -37,19 +37,7 @@ public class Enemy : MonoBehaviour
         vector2 = new Vector2(transform.position.x, -vector3.y);
 
         if (transform.position.y > enemyMoveStopPoint.transform.position.y){
-
-            if (++flameCount == 60)
-            {
-                GameObject prefabs = (GameObject)Resources.Load("WindPrefab");
-                GameObject shell = (GameObject)Instantiate(prefabs,
-                                                           new Vector3(this.transform.position.x,
-                                                                       this.transform.position.y,
-                                                                       this.transform.position.z),
-                                                           Quaternion.identity);
-                this.flameCount = 0;
-
-                print("a");
-            }
+    
 
         }
         else{
